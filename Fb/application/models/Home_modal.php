@@ -51,10 +51,10 @@ class Home_modal extends CI_Model {
             $this->db->where('user_id', $logid );
             $this->db->delete('log_best_images');
 
-            foreach ($images as $key => $value) {
+            // foreach ($images as $key => $value) {
               # code...
-               $this->db->insert('log_best_images',$images[$key]);
-            }
+               $this->db->insert_batch('log_best_images',$images);
+            // }
         $data['success'] = true;
 
         }
